@@ -25,8 +25,10 @@ public class DrawDemo
     }
 
     /**
-     * Draw a triangle on the screen.
-     */
+    * Draw a triangle on the screen.
+    * @param xPos posicion de x.
+    * @param yPos posicion de y.
+    */
     public void drawTriangle(int xPos, int yPos)
     {
         Pen pen = new Pen(xPos, yPos, myCanvas);
@@ -106,5 +108,29 @@ public class DrawDemo
     public void clear()
     {
         myCanvas.erase();
+    }
+    
+    /**
+    * Draw a pentagon on the screen.
+    * @param xPos posicion de x.
+    * @param yPos posicion de y.
+    */
+    public void drawPentagon(int xPos, int yPos)
+    {
+        Pen pen = new Pen(xPos, yPos, myCanvas);
+        pen.setColor(Color.green);
+
+        pentagon(pen);
+    }
+    
+    /**
+     * Draw a pentagon in the pen's color at the pen's location.
+     */
+    private void pentagon(Pen pen)
+    {
+        for (int i=0; i<5; i++) {
+            pen.move(100);
+            pen.turn(72);
+        }
     }
 }
