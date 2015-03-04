@@ -25,6 +25,28 @@ public class DrawDemo
     }
 
     /**
+     * Draw a triangle on the screen.
+     */
+    public void drawTriangle(int xPos, int yPos)
+    {
+        Pen pen = new Pen(xPos, yPos, myCanvas);
+        pen.setColor(Color.green);
+
+        triangle(pen);
+    }
+    
+    /**
+     * Draw a triangle in the pen's color at the pen's location.
+     */
+    private void triangle(Pen pen)
+    {
+        for (int i=0; i<3; i++) {
+            pen.move(100);
+            pen.turn(120);
+        }
+    }
+    
+    /**
      * Draw a square on the screen.
      */
     public void drawSquare()
