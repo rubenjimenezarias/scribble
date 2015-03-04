@@ -133,4 +133,28 @@ public class DrawDemo
             pen.turn(72);
         }
     }
+    
+        /**
+    * Draw a polygon on the screen.
+    * @param xPos posicion de x.
+    * @param yPos posicion de y.
+    */
+    public void drawPolygon(int n)
+    {
+        Pen pen = new Pen(100, 100, myCanvas);
+        pen.setColor(Color.green);
+
+        polygon(pen,n);
+    }
+    
+    /**
+     * Draw a polygon in the pen's color at the pen's location.
+     */
+    private void polygon(Pen pen, int n)
+    {
+        for (int i=0; i<n; i++) {
+            pen.move(100);
+            pen.turn(360/n);
+        }
+    }
 }
