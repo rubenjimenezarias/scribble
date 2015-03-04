@@ -134,7 +134,7 @@ public class DrawDemo
         }
     }
     
-        /**
+    /**
     * Draw a polygon on the screen.
     * @param xPos posicion de x.
     * @param yPos posicion de y.
@@ -155,6 +155,20 @@ public class DrawDemo
         for (int i=0; i<n; i++) {
             pen.move(100);
             pen.turn(360/n);
+        }
+    }
+    
+    /**
+     * Draw a spiral in the pen's color at the pen's location.
+     */
+    public void drawSpiral()
+    {
+        Pen pen = new Pen(150, 150, myCanvas);
+        int x = 30;
+        for (int i=0; i<50; i++) {
+            pen.move(x);
+            pen.turn(90);
+            x -= -5;
         }
     }
 }
